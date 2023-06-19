@@ -1,0 +1,68 @@
+<?php
+include("../dbconn.php");
+try {
+    // Retrieve the raw POST data
+    $jsonData = file_get_contents('php://input');
+    // Convert the JSON data to a PHP object or array
+    $data = json_decode($jsonData);
+    if (isset($data->eventId) && isset($data->userId)) {
+        $currentTime = date('Y-m-d H:i:s');
+
+        $sqlUpdate = "Update `events`
+            SET
+            IsActive = 0,
+            UpdateBy =?,
+            UpdateDate = ?
+            WHERE
+            EventId = ? AND
+            IsActive = 1";
+
+        $resultUpdate = $conn->execute_query($sqlUpdate, [
+            $data->userId,
+            $currentTime,
+            $data->eventId,
+        ]);
+
+        if ($resultUpdate === TRUE) {
+            http_response_code(200);
+            echo json_encode(
+                array(
+                    "status" => "OK",
+                    "code" => 200,
+                    "message" => "Success flag delete transactions",
+                )
+            );
+        } else {
+            http_response_code(500);
+            echo json_encode(
+                array(
+                    "status" => "INTERNAL ERROR",
+                    "code" => 500,
+                    "message" => "Something went wrong on UPDATE event.",
+                )
+            );
+        }
+    } else {
+        http_response_code(400);
+        echo json_encode(
+            array(
+                "status" => "BAD REQUEST",
+                "code" => 400,
+                "message" => "Invalid input for parameter.",
+            )
+        );
+    }
+} catch (Exception $ex) {
+    http_response_code(400);
+    echo json_encode(
+        array(
+            "status" => "BAD REQUEST",
+            "code" => 400,
+            "message" => "An error occurred: " . $ex->getMessage(),
+        )
+    );
+} finally {
+    $conn->close();
+}
+
+?>

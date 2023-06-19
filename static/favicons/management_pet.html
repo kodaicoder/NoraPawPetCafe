@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nora-Paws : Adopt Status</title>
+    <script src="./js/route_guard.js"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./static/favicons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./static/favicons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./static/favicons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./static/favicons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href=".static/favicons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./static/favicons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./static/favicons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./static/favicons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./static/favicons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./static/favicons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./static/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./static/favicons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./static/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./static/favicons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./static/favicons/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/26f62c31a3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="./js/ajax_helper.js"></script>
+    <script src="./js/utils.js"></script>
+
+    <link href="./css/my-style.css" type="text/css" rel="stylesheet" />
+    <link href="./css/carousel.css" type="text/css" rel="stylesheet" />
+    <style>
+      section > label {
+        margin: 0.3rem 0;
+      }
+    </style>
+  </head>
+  <body class="mt-0 mt-md-4 mt-lg-0" onload="hideMenu();">
+    <div class="main-bg"></div>
+    <header>
+      <nav class="navbar navbar-expand-md fixed-top bg-light-yellow shadow">
+        <div class="container-fluid mx-lg-5 flex-md-column flex-lg-row">
+          <a class="navbar-brand d-flex gap-3" href="#">
+            <picture>
+              <img
+                src="./images/ui/logo.png"
+                alt="nora-paws pet cafe"
+                width="70"
+                height="60"
+              />
+            </picture>
+            <div
+              class="d-flex flex-column align-items-start fw-bold"
+              style="color: #3d2b19"
+            >
+              <p class="m-0">Nora-Paws</p>
+              <p class="m-0">Pet & Café</p>
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto gap-lg-2">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html"
+                  >HOME</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./event.html">EVENT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./menu.html">MENU</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./gallery.html">GALLERY</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./adopt.html">ADOPT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./merchandise.html">MERCHANDISE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">CONTACT</a>
+              </li>
+              <li class="nav-item login-item">
+                <button
+                  class="nav-link d-md-flex align-items-center gap-2 h-100"
+                  onclick=" window.open('./login.html', '_blank');"
+                  title="Login"
+                >
+                  <i class="fas fa-user-circle" style="font-size: 1.5rem"></i>
+                  <span class="d-md-none">LOGIN</span>
+                </button>
+              </li>
+              <li class="nav-item dropdown admin-item d-none">
+                <a
+                  class="nav-link active dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-cogs" style="font-size: 1.5rem"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="./management_event.html"
+                      >Manage event</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./management_menu.html"
+                      >Manage menu</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item active" href="./management_pet.html"
+                      >Manage pets</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./management_gallery.html"
+                      >Manage gallery</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./management_reviews.html"
+                      >Manage reviews</a
+                    >
+                  </li>
+                  <li style="margin-top: 2rem">
+                    <a
+                      class="dropdown-item d-md-flex align-items-center gap-2 h-100"
+                      style="cursor: pointer"
+                      onclick="logout();"
+                    >
+                      <i class="fas fa-sign-out" style="font-size: 1rem"></i>
+                      <span>LOGOUT</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown user-item d-none">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-cogs" style="font-size: 1.5rem"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="./adopt_status.html"
+                      >Adopt status</a
+                    >
+                  </li>
+                  <li style="margin-top: 2rem">
+                    <a
+                      class="dropdown-item d-md-flex align-items-center gap-2 h-100"
+                      style="cursor: pointer"
+                      onclick="logout();"
+                    >
+                      <i class="fas fa-sign-out" style="font-size: 1rem"></i>
+                      <span>LOGOUT</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main
+      class="container bg-light-yellow rounded-5 my-4 my-md-5 my-lg-4 shadow-lg"
+      style="padding: 3rem"
+    >
+      <div
+        class="header d-flex flex-column flex-md-row justify-content-between"
+      >
+        <h1>Manage pets</h1>
+        <button
+          class="btn btn-success m-2 me-auto me-md-0"
+          data-bs-toggle="modal"
+          data-bs-target="#addPetModal"
+        >
+          Add pet
+        </button>
+      </div>
+      <div class="table-container mt-3">
+        <table
+          class="pet-table table table-light table-bordered table-striped"
+          style="min-width: 800px"
+        >
+          <colgroup>
+            <col />
+            <col />
+            <col width="35%" />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Sex</th>
+              <th>Breed</th>
+              <th>Age (yrs)</th>
+              <th>type</th>
+              <th>Image</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="9" class="text-center" style="padding: 1rem">
+                <b>Loading pet data . . .</b>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer class="container-fluid">
+      <div class="row g-3 w-100 px-lg-5 py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+          <symbol id="facebook" viewBox="0 0 16 16">
+            <path
+              d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+            ></path>
+          </symbol>
+          <symbol id="instagram" viewBox="0 0 16 16">
+            <path
+              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+            ></path>
+          </symbol>
+          <symbol id="twitter" viewBox="0 0 16 16">
+            <path
+              d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+            ></path>
+          </symbol>
+          <symbol id="pin" viewBox="0 0 20 20">
+            <path
+              d="M12 0C7.582 0 4 3.582 4 8c0 4.086 4.464 8.307 7.224 11.144a0.9 0.9 0 0 0 1.552 0C15.536 16.307 20 12.086 20 8c0-4.418-3.582-8-8-8zm0 11.219c-1.543 0-2.797-1.254-2.797-2.797S10.457 5.625 12 5.625s2.797 1.254 2.797 2.797S13.543 11.219 12 11.219z"
+            />
+          </symbol>
+        </svg>
+        <div class="col-7 col-md-auto order-md-0 d-flex align-items-center">
+          <a
+            href="/"
+            class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+          >
+            <img
+              src="./images/ui/logo.png"
+              alt="nora-paws pet cafe"
+              width="70"
+              height="60"
+            />
+          </a>
+          <div class="d-flex flex-column align-items-start">
+            <p>Nora-Paws</p>
+            <p>Pet & Café</p>
+            <p>© 2023</p>
+          </div>
+        </div>
+
+        <div
+          class="nav col-5 col-md-auto order-md-2 ms-md-auto gap-4 justify-content-center align-items-center list-unstyled d-flex"
+        >
+          <ul
+            class="d-flex flex-column flex-lg-row justify-content-around gap-1"
+          >
+            <li class="ms-3">
+              <a class="text-body-secondary" href="#"
+                ><svg class="bi" width="24" height="24">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="ms-3">
+              <a class="text-body-secondary" href="#"
+                ><svg class="bi" width="24" height="24">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="ms-3">
+              <a class="text-body-secondary" href="#"
+                ><svg class="bi" width="24" height="24">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+
+          <div class="d-none d-md-block">
+            <p class="toTop">
+              <a href="#" class="fw-normal btn-link"> Back to top</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="address col-12 col-md-4 ms-lg-4 order-md-1 row">
+          <div class="col-6">
+            <address class="m-0 text-start">
+              432 Park Avenue, Apartment 34B <br />New York, NY 10022 United
+              States
+              <br />
+              +(66)99-999-1234
+            </address>
+          </div>
+          <div class="col-6">
+            <p>OPENING HOURS</p>
+            <small> Open daily : 8:00-21:00</small>
+            <small> **closed on Wednesday</small>
+          </div>
+        </div>
+
+        <div class="d-md-none">
+          <p class="toTop">
+            <a href="#" class="fw-normal btn-link"> Back to top</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!--? Add Pet MODAL -->
+    <div
+      class="modal fade pet-modal"
+      id="addPetModal"
+      tabindex="-1"
+      aria-labelledby="addPetModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="fw-bold">Adding new pet</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="new-pet-container">
+              <form
+                id="addPet"
+                name="addPet"
+                class="row g-3"
+                method="POST"
+                action="#"
+              >
+                <section class="col-12">
+                  <label>
+                    Name
+                    <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-font"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <input
+                      type="text"
+                      id="petName"
+                      name="petName"
+                      class="form-control"
+                      aria-label="name for pet"
+                      placeholder="Name of new pet..."
+                      required
+                    />
+                  </div>
+                </section>
+                <section class="col-12">
+                  <label>
+                    Description
+                    <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-font"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <textarea
+                      id="petDescription"
+                      name="petDescription"
+                      class="form-control"
+                      aria-label="place for pet"
+                      placeholder="Description of new pet..."
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                </section>
+                <section class="col-12 col-lg-6">
+                  <label>
+                    Sex
+                    <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-mars"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <select
+                      id="petSex"
+                      name="petSex"
+                      class="form-select"
+                      aria-label="Selection for sex of pet"
+                      required
+                    >
+                      <option selected disabled hidden>
+                        -- please select --
+                      </option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="ETC">ETC</option>
+                    </select>
+                  </div>
+                </section>
+                <section class="col-12 col-lg-6">
+                  <label>
+                    Type of pet
+                    <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-paw"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <select
+                      id="petTypes"
+                      name="petTypes"
+                      class="form-select"
+                      aria-label="Selection for type of pet"
+                      required
+                    >
+                      <option value="" selected disabled hidden>
+                        -- please select --
+                      </option>
+                      <option value="" disabled>loading data...</option>
+                    </select>
+                  </div>
+                </section>
+
+                <section class="col-12 col-lg-6">
+                  <label>
+                    Breed
+                    <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-paw"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <input
+                      type="text"
+                      id="petBreed"
+                      name="petBreed"
+                      class="form-control"
+                      aria-label="breed for pet"
+                      placeholder="Breed of new pet..."
+                      required
+                    />
+                  </div>
+                </section>
+                <section class="col-12 col-lg-6">
+                  <label>
+                    Age
+                    <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-calendar"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <input
+                      type="number"
+                      inputmode="numeric"
+                      id="petAge"
+                      name="petAge"
+                      class="form-control"
+                      aria-label="Age of pet"
+                      placeholder="Age of new pet..."
+                      min="0"
+                      max="99"
+                      step="1"
+                      required
+                    />
+                  </div>
+                </section>
+                <section class="col-12 col-lg-6">
+                  <label>
+                    Image of pet
+                    <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group flex-nowrap">
+                    <input
+                      class="form-control"
+                      type="file"
+                      id="petImage"
+                      name="petImage"
+                      accept="image/*"
+                      required
+                    />
+                  </div>
+                </section>
+                <section class="col-12 col-lg-6">
+                  <div id="imagePreview" style="margin-top: 1rem"></div>
+                </section>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" form="addPet" class="btn btn-success mx-3">
+              Submit
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--? Edit Pet MODAL -->
+    <div
+      class="modal fade edit-pet-modal"
+      id="editPetModal"
+      tabindex="-1"
+      aria-labelledby="editPetModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="fw-bold">Editing pet</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="new-pet-container">
+              <form
+                id="editPet"
+                name="editPet"
+                class="row g-3"
+                method="POST"
+                action="#"
+              >
+                <input id="petId" name="petId" type="hidden" />
+                <section class="col-12">
+                  <label> Name </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-font"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <input
+                      type="text"
+                      id="editPetName"
+                      name="petName"
+                      class="form-control"
+                      aria-label="name for pet"
+                      placeholder="Name of pet..."
+                    />
+                  </div>
+                </section>
+                <section class="col-12">
+                  <label> Description </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-font"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <textarea
+                      id="editPetDescription"
+                      name="petDescription"
+                      class="form-control"
+                      aria-label="description for pet"
+                      placeholder="Description of pet..."
+                      rows="4"
+                    ></textarea>
+                  </div>
+                </section>
+                <section class="col-12 col-lg-6">
+                  <label> Sex </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-mars"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <select
+                      id="editPetSex"
+                      name="petSex"
+                      class="form-select"
+                      aria-label="Selection for sex of pet"
+                    >
+                      <option selected disabled hidden>
+                        -- please select --
+                      </option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="ETC">ETC</option>
+                    </select>
+                  </div>
+                </section>
+                <section class="col-12 col-lg-6">
+                  <label> Type of pet </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-paw"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <select
+                      id="editPetTypes"
+                      name="petTypes"
+                      class="form-select"
+                      aria-label="Selection for type of pet"
+                    >
+                      <option value="" selected disabled hidden>
+                        -- please select --
+                      </option>
+                      <option value="" disabled>loading data...</option>
+                    </select>
+                  </div>
+                </section>
+
+                <section class="col-12 col-lg-6">
+                  <label> Breed </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-paw"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <input
+                      type="text"
+                      id="editPetBreed"
+                      name="petBreed"
+                      class="form-control"
+                      aria-label="breed for pet"
+                      placeholder="Breed of new pet..."
+                    />
+                  </div>
+                </section>
+                <section class="col-12 col-lg-6">
+                  <label> Age </label>
+                  <div class="input-group flex-nowrap">
+                    <span
+                      class="input-group-text"
+                      style="background-color: #fff3e6"
+                    >
+                      <i
+                        class="fas fa-calendar"
+                        style="font-size: 1.5rem; color: #3d2b19"
+                      ></i>
+                    </span>
+                    <input
+                      type="number"
+                      inputmode="numeric"
+                      id="editPetAge"
+                      name="petAge"
+                      class="form-control"
+                      aria-label="Age of pet"
+                      placeholder="Age of new pet..."
+                      min="0"
+                      max="99"
+                      step="1"
+                    />
+                  </div>
+                </section>
+                <section class="col-12 col-lg-6">
+                  <label> Image of pet </label>
+                  <div class="input-group flex-nowrap">
+                    <input
+                      class="form-control"
+                      type="file"
+                      id="editPetImage"
+                      name="petImage"
+                      accept="image/*"
+                    />
+                  </div>
+                </section>
+                <section class="col-12 col-lg-6">
+                  <div
+                    id="editImagePreview"
+                    class="edit-pet-image"
+                    style="margin-top: 1rem"
+                  >
+                    <img src="" alt="current pet image" />
+                  </div>
+                </section>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" form="editPet" class="btn btn-success mx-3">
+              Submit
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--? Adopt Request MODAL-->
+    <div
+      class="modal fade request-pet-modal"
+      id="requestPetModal"
+      tabindex="-1"
+      aria-labelledby="requestPetModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="fw-bold">Requested for pet</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" class="request-pet-id" />
+            <div class="request-pet-container table-container">
+              <table
+                class="request-pet-table table table-light table-bordered table-striped"
+              >
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Requested from</th>
+                    <th>Process step</th>
+                    <th>Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td colspan="4">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--? Adopt Request Detail MODAL-->
+    <div
+      class="modal fade request-detail-modal"
+      id="requestDetailModal"
+      tabindex="-1"
+      aria-labelledby="requestDetailModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="fw-bold">Request details</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" class="request-detail-adopt-id" />
+            <div class="row request-detail g-3">
+              <section class="col-12 col-lg-6">
+                <label>Full name</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-user"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="fullname"
+                      name="fullname"
+                      class="form-control"
+                      aria-label="full name of requester"
+                      placeholder="full name of requester"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Email</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-envelope"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      class="form-control"
+                      aria-label="email of requester"
+                      placeholder="email of requester"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Phone number</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-phone"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="phone"
+                      name="phone"
+                      class="form-control"
+                      aria-label="phone of requester"
+                      placeholder="phone of requester"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Address</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-map-marker"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <textarea
+                      type="text"
+                      id="address"
+                      name="address"
+                      class="form-control"
+                      aria-label="address of requester"
+                      placeholder="address of requester"
+                      rows="4"
+                      readonly
+                      disabled
+                    ></textarea>
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Pet image</label>
+                <div class="input-group">
+                  <img
+                    id="requestPetImage"
+                    src=""
+                    alt="image of the pet that requester request"
+                  />
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Pet name</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-font"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="requestPetName"
+                      name="requestPetName"
+                      class="form-control"
+                      aria-label="pet name that requester request"
+                      placeholder="pet name that requester request"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Pet sex</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-paw"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="requestPetSex"
+                      name="requestPetSex"
+                      class="form-control"
+                      aria-label="pet sex that requester request"
+                      placeholder="pet sex that requester request"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Pet breed</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-paw"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="requestPetBreed"
+                      name="requestPetBreed"
+                      class="form-control"
+                      aria-label="pet breed that requester request"
+                      placeholder="pet breed that requester request"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Pet age</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-paw"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="requestPetAge"
+                      name="requestPetAge"
+                      class="form-control"
+                      aria-label="pet age that requester request"
+                      placeholder="pet age that requester request"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Have pet?</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-paw"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="hasPet"
+                      name="hasPet"
+                      class="form-control"
+                      aria-label="is requester has pet"
+                      placeholder="is requester has pet"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Have children?</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-child"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="hasChild"
+                      name="hasChild"
+                      class="form-control"
+                      aria-label="is requester has child"
+                      placeholder="is requester has child"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Tenancy contract allowed?</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-file-text"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="tenancyAllow"
+                      name="tenancyAllow"
+                      class="form-control"
+                      aria-label="is requester has tenancy allow"
+                      placeholder="is requester has tenancy allow "
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Will giving attention?</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-shower"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="giveAttention"
+                      name="giveAttention"
+                      class="form-control"
+                      aria-label="is requester will giving attention"
+                      placeholder="is requester will giving attention "
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Veterinary clinic</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-hospital"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="vetClinic"
+                      name="vetClinic"
+                      class="form-control"
+                      aria-label="vet clinic of requester"
+                      placeholder="vet clinic of requester"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Will buying pet insurance?</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-plus-square"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="petInsurance"
+                      name="petInsurance"
+                      class="form-control"
+                      aria-label="Is requester will buy pet insurance"
+                      placeholder="Is requester will buy pet insurance"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Will have someone on part of the day?</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-sun"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="partOfDay"
+                      name="partOfDay"
+                      class="form-control"
+                      aria-label="Is pet will have someone on part of the day"
+                      placeholder="Is pet will have someone on part of the day"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Will pet relocate with you?</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-plane"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="relocate"
+                      name="relocate"
+                      class="form-control"
+                      aria-label="Is pet will relocate with you"
+                      placeholder="Is pet will relocate with you"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section class="col-12 col-lg-6">
+                <label>Where is your pet while you go on a holiday?</label>
+                <div class="input-group flex-nowrap">
+                  <span
+                    class="input-group-text"
+                    style="background-color: #fff3e6"
+                  >
+                    <i
+                      class="fas fa-plane"
+                      style="font-size: 1.5rem; color: #3d2b19"
+                    ></i>
+                    <input
+                      type="text"
+                      id="holiday"
+                      name="holiday"
+                      class="form-control"
+                      aria-label="Where is your pet while you go on a holiday?"
+                      placeholder="IWhere is your pet while you go on a holiday?"
+                      readonly
+                      disabled
+                    />
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success mx-3 approve-btn">
+              Approve
+            </button>
+            <button type="button" class="btn btn-danger me-auto reject-btn">
+              Reject
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(async function () {
+        const petTypes = await loadPetTypes();
+        await buildTypeSelect(petTypes);
+
+        const pets = await loadAllPets();
+        await buildDatatable(pets);
+
+        $(".pet-modal,.edit-pet-modal").on("hidden.bs.modal", (ev) => {
+          $(ev.currentTarget).find("form").trigger("reset");
+        });
+      });
+
+      const loadPetTypes = async () => {
+        const resUser = await getUserId();
+        if (resUser.code == 200) {
+          const res = await getAsync("./APIs/pet/get_types.php");
+          if (!!res.types || res.code == 200) {
+            if (res.types.length > 0) {
+              return res.types;
+            }
+          } else {
+            Swal.fire("Error!", res.message, "error");
+          }
+        } else {
+          Swal.fire("Error!", resUser.message, "error");
+        }
+      };
+
+      const buildTypeSelect = async (petTypes) => {
+        const selectElement = $("#petTypes,#editPetTypes");
+        $(
+          "#petTypes option:not(:first-child),#editPetTypes option:not(:first-child)"
+        ).remove(); // clear all options except first one
+        if (petTypes.length > 0) {
+          petTypes.forEach((type) => {
+            const optElement = `<option value="${type.PetTypeId}">${type.PetTypeDescription}</option>`;
+            selectElement.append(optElement);
+          });
+        } else {
+          const optElement = `<option value="" disabled>Not data found</option>`;
+          selectElement.append(optElement);
+        }
+      };
+
+      const loadAllPets = async () => {
+        const resUser = await getUserId();
+        if (resUser.code == 200) {
+          const res = await getAsync("./APIs/pet/get_all.php");
+          if (!!res.pets || res.code == 200) {
+            if (res.pets.length > 0) {
+              return res.pets;
+            }
+          } else {
+            Swal.fire("Error!", res.message, "error");
+          }
+        } else {
+          Swal.fire("Error!", resUser.message, "error");
+        }
+      };
+
+      const buildDatatable = async (pets) => {
+        if (pets.length > 0) {
+          const tableBody = $(".pet-table tbody");
+          tableBody.empty(); //clear a not found data placeholder.
+          pets.forEach((pet, idx) => {
+            const rowData = `
+                                  <tr>
+                                    <td class="text-center">${idx + 1}</td>
+                                    <td>${pet.PetName}</td>
+                                    <td class="text-wrap">
+                                     ${pet.PetDescription}
+                                    </td>
+                                    <td class="text-center text-wrap">${
+                                      pet.PetSex
+                                    }</td>
+                                    <td>${pet.PetBreed}</td>
+                                    <td class="text-center">${pet.PetAge}</td>
+                                    <td class="text-center ">${
+                                      pet.PetTypeDescription
+                                    }</td>
+                                    <td class="text-center">
+                                      <img src="${pet.PetImageSrc}" alt="${
+              pet.PetName
+            } the ${pet.PetTypeDescription}" />
+                                    </td>
+                                    <td class="text-center">
+                                      <div class="d-flex">
+                                        <button
+                                          class="btn btn-outline-primary m-2"
+                                          title="edit"
+                                          onclick="editThis(${pet.PetId})"
+                                        >
+                                          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        </button>
+                                        <button
+                                          class="btn btn-outline-danger m-2"
+                                          title="delete"
+                                          onclick="deleteThis(${pet.PetId})"
+                                        >
+                                          <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                        </button>
+                                        <button
+                                          class="btn btn-outline-secondary m-2"
+                                          title="adopt request list"
+                                          onclick="checkThis(${pet.PetId})"
+                                        >
+                                          <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        </button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                `;
+            tableBody.append(rowData);
+          });
+        } else {
+          const noData = ` <tr>
+                        <td colspan="9" class="text-center" style="padding: 1rem">
+                          <b>Not found any data.</b>
+                        </td>
+                      </tr>`;
+          $(".pet-table tbody").empty().append(noData);
+        }
+      };
+
+      const getPetById = async (petId) => {
+        const res = await getAsync("./APIs/pet/get_by_id.php?id=" + petId);
+        if (!!res.pet && res.code == 200) {
+          return res.pet;
+        } else {
+          Swal.fire("Error!", res.message, "error");
+          return false;
+        }
+      };
+
+      const getAdoptTransactionByPet = async (petId) => {
+        const res = await getAsync("./APIs/adopt/get_by_petId.php?id=" + petId);
+        if (!!res.transactions && res.code == 200) {
+          return res.transactions;
+        }
+        // else {
+        //   Swal.fire("Error!", res.message, "error");
+        //   return false;
+        // }
+      };
+
+      const getAdoptTransactionById = async (adoptId) => {
+        const res = await getAsync("./APIs/adopt/get_by_id.php?id=" + adoptId);
+        if (!!res.transaction && res.code == 200) {
+          return res.transaction;
+        } else {
+          Swal.fire("Error!", res.message, "error");
+          return false;
+        }
+      };
+
+      $("#petImage").change((ev) => {
+        var file = ev.target.files[0];
+        if (file) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var imagePreview = $("#imagePreview");
+            var image = $("<img>");
+
+            image.attr("src", e.target.result);
+            imagePreview.empty();
+            imagePreview.append(image);
+          };
+
+          reader.readAsDataURL(file);
+        }
+      });
+
+      $("#editPetImage").change((ev) => {
+        var file = ev.target.files[0];
+        if (file) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var imagePreview = $("#editImagePreview");
+            var image = $("<img>");
+
+            image.attr("src", e.target.result);
+            imagePreview.empty();
+            imagePreview.append(image);
+          };
+
+          reader.readAsDataURL(file);
+        }
+      });
+
+      $("#addPet").submit(async (ev) => {
+        ev.preventDefault();
+
+        const imageInput = $("#petImage")[0];
+        const image = imageInput.files[0];
+        const maxSizeInBytes = 5 * 1024 * 1024;
+        if (image.size > maxSizeInBytes) {
+          Swal.fire(
+            "File size is over limit!",
+            "Your image file size is over limit (5MB)",
+            "info"
+          );
+          return false;
+        }
+
+        const resUser = await getUserId();
+        if (resUser.code == 200) {
+          const formData = new FormData(ev.currentTarget);
+          formData.append("userId", resUser.userId);
+          formData.append("petImage", image);
+          // var jsonData = formDataToJson(formData);
+          const res = await postFormDataAsync(
+            "./APIs/pet/create.php",
+            formData
+          );
+          if (res.code == 200) {
+            const pets = await loadAllPets();
+            await buildDatatable(pets);
+
+            Swal.fire(
+              "Create success",
+              "You has adding a new pet.",
+              "success"
+            ).then(() => {
+              $(".pet-modal").modal("hide");
+            });
+          } else {
+            Swal.fire("Adding pet failed", res.message, "error");
+          }
+        } else {
+          Swal.fire(
+            "Error!",
+            "Something went wrong while get user data :" + resUser.message,
+            "error"
+          );
+        }
+      });
+
+      const deleteThis = async (petId) => {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "Please confirm that you want to delete this pet.",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes",
+          cancelButtonText: "No",
+          reverseButtons: true,
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            const resUser = await getUserId();
+            if (resUser.code == 200) {
+              const res = await postAsync("./APIs/pet/delete.php", {
+                petId: petId,
+                userId: resUser.userId,
+              });
+              if (res.code == 200) {
+                const pets = await loadAllPets();
+                await buildDatatable(pets);
+
+                Swal.fire(
+                  "Success delete pet",
+                  "You have already delete a pet.",
+                  "success"
+                );
+              } else {
+                Swal.fire(
+                  "Error!",
+                  "Something went wrong" + res.message,
+                  "error"
+                );
+              }
+            } else {
+              Swal.fire(
+                "Error!",
+                "Something went wrong while get user data :" + resUser.message,
+                "error"
+              );
+            }
+          }
+        });
+      };
+
+      const editThis = async (petId) => {
+        $(".edit-pet-modal").find("#petId")[0].value = petId;
+        $(".edit-pet-modal").modal("show");
+      };
+
+      $(".edit-pet-modal").on("show.bs.modal", async (ev) => {
+        const form = $(ev.currentTarget).find("form");
+        const petId = form.find("#petId")[0].value;
+
+        const name = form.find("#editPetName")[0];
+        const description = form.find("#editPetDescription")[0];
+        const sex = form.find("#editPetSex")[0];
+        const type = form.find("#editPetTypes")[0];
+        const breed = form.find("#editPetBreed")[0];
+        const age = form.find("#editPetAge")[0];
+        const image = form.find(".edit-pet-image img")[0];
+
+        const pet = await getPetById(petId);
+        if (!!pet) {
+          $(name).val(pet.PetName);
+          $(description).val(pet.PetDescription);
+          $(sex).val(pet.PetSex);
+          $(type).val(pet.PetTypeId);
+          $(breed).val(pet.PetBreed);
+          $(age).val(pet.PetAge);
+          $(image).attr("src", pet.PetImageSrc);
+        }
+      });
+
+      $("#editPet").submit(async (ev) => {
+        ev.preventDefault();
+
+        const resUser = await getUserId();
+        if (resUser.code == 200) {
+          const formData = new FormData(ev.currentTarget);
+          formData.append("userId", resUser.userId);
+
+          const imageInput = $("#editPetImage")[0];
+          const image = imageInput.files[0];
+          const maxSizeInBytes = 5 * 1024 * 1024;
+          if (!!image) {
+            if (image.size > maxSizeInBytes) {
+              Swal.fire(
+                "File size is over limit!",
+                "Your image file size is over limit (5MB)",
+                "info"
+              );
+              return false;
+            } else {
+              formData.append("petImage", image);
+            }
+          } else {
+            formData.delete("petImage");
+          }
+          const res = await postFormDataAsync(
+            "./APIs/pet/update.php",
+            formData
+          );
+          if (res.code == 200) {
+            const pets = await loadAllPets();
+            await buildDatatable(pets);
+
+            Swal.fire(
+              "Update success",
+              "You has updated a pet.",
+              "success"
+            ).then(() => {
+              $(".edit-pet-modal").modal("hide");
+            });
+          } else {
+            Swal.fire("Update pet failed", res.message, "error");
+          }
+        } else {
+          Swal.fire(
+            "Error!",
+            "Something went wrong while get user data :" + resUser.message,
+            "error"
+          );
+        }
+      });
+
+      const checkThis = async (petId) => {
+        $(".request-pet-modal").find(".request-pet-id")[0].value = petId;
+        $(".request-pet-modal").modal("show");
+      };
+
+      $(".request-pet-modal").on("show.bs.modal", async (ev) => {
+        const petId = $(ev.currentTarget).find(".request-pet-id")[0].value;
+
+        const adoptTransactions = await getAdoptTransactionByPet(petId);
+        await buildRequestDatatable(adoptTransactions);
+      });
+
+      const buildRequestDatatable = async (adoptTransactions) => {
+        const tableBody = $(".request-pet-table tbody");
+        if (!!adoptTransactions) {
+          tableBody.empty();
+          adoptTransactions.forEach((transaction, idx) => {
+            const rowData = `
+                                <tr>
+                                  <td class="text-center">${idx + 1}</td>
+                                  <td>
+                                    <b>"${transaction.Fullname}"</b>
+                                    request for
+                                    <b>"${transaction.PetName}"</b>
+                                  </td>
+                                  <td class="text-center">
+                                   <p>${transaction.AdoptProcessDescription}</p>
+                                  </td>
+                                  <td class="text-center">
+                                    <button
+                                      class="btn btn-outline-primary m-2"
+                                      title="detail"
+                                      onclick="detailThis(${
+                                        transaction.AdoptTransactionId
+                                      })"
+                                    >
+                                      <i class="fa fa-file-text" aria-hidden="true"></i>
+                                    </button>
+                                  </td>
+                                </tr>
+                                `;
+            tableBody.append(rowData);
+          });
+        } else {
+          const noData = `
+                        <tr class="text-center">
+                          <td colspan="4">No request was found.</td>
+                        </tr>
+                `;
+          tableBody.empty().append(noData);
+        }
+      };
+
+      const detailThis = async (adoptId) => {
+        $(".request-detail-modal").find(".request-detail-adopt-id")[0].value =
+          adoptId;
+        $(".request-detail-modal").modal("show");
+      };
+
+      $(".request-detail-modal").on("show.bs.modal", async (ev) => {
+        const adoptId = $(ev.currentTarget).find(".request-detail-adopt-id")[0]
+          .value;
+
+        const adoptTransaction = await getAdoptTransactionById(adoptId);
+
+        if (!!adoptTransaction) {
+          $("#fullname").val(adoptTransaction.Fullname);
+          $("#email").val(adoptTransaction.Email);
+          $("#phone").val(adoptTransaction.PhoneNumber);
+          $("#address").val(adoptTransaction.AdopterAddress);
+          $("#requestPetImage").attr("src", adoptTransaction.PetImageSrc);
+          $("#requestPetName").val(adoptTransaction.PetName);
+          $("#requestPetSex").val(adoptTransaction.PetSex);
+          $("#requestPetBreed").val(adoptTransaction.PetBreed);
+          $("#requestPetAge").val(adoptTransaction.PetAge);
+          $("#hasPet").val(adoptTransaction.AdopterHasPet);
+
+          let hasChildString;
+          if (!!adoptTransaction.AdopterHasChild) {
+            hasChildString = `Yes, ${adoptTransaction.AdopterChildDetail}`;
+          } else {
+            hasChildString = `No.`;
+          }
+          $("#hasChild").val(hasChildString);
+
+          let tenancyAllowString;
+          if (!!adoptTransaction.AdopterTenancyAllow) {
+            tenancyAllowString = `Yes.`;
+          } else {
+            tenancyAllowString = `No.`;
+          }
+          $("#tenancyAllow").val(tenancyAllowString);
+
+          let giveAttentionString;
+          if (!!adoptTransaction.AdopterAttention) {
+            giveAttentionString = `Yes.`;
+          } else {
+            giveAttentionString = `No.`;
+          }
+          $("#giveAttention").val(giveAttentionString);
+
+          $("#vetClinic").val(adoptTransaction.AdopterVetClinic);
+
+          let petInsuranceString;
+          if (!!adoptTransaction.AdopterPetInsurance) {
+            petInsuranceString = `Yes.`;
+          } else {
+            petInsuranceString = `No.`;
+          }
+          $("#petInsurance").val(petInsuranceString);
+
+          let partOfDayString;
+          if (!!adoptTransaction.AdopterDayTime) {
+            partOfDayString = `Yes.`;
+          } else {
+            partOfDayString = `No.`;
+          }
+          $("#partOfDay").val(partOfDayString);
+
+          let relocateString;
+          if (!!adoptTransaction.AdopterRelocate) {
+            relocateString = `Yes.`;
+          } else {
+            relocateString = `No, They will go to ${adoptTransaction.AdopterPetLocation}`;
+          }
+          $("#relocate").val(relocateString);
+          $("#holiday").val(adoptTransaction.AdopterOnHoliday);
+
+          $(".approve-btn").on(
+            "click",
+            {
+              adoptId: adoptId,
+            },
+            approveClick
+          );
+
+          $(".reject-btn").on(
+            "click",
+            {
+              adoptId: adoptId,
+            },
+            rejectClick
+          );
+        }
+      });
+
+      const approveClick = async (ev) => {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "Please confirm that you want to approve this request.",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes",
+          cancelButtonText: "No",
+          reverseButtons: true,
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            const adoptId = ev.data.adoptId;
+            const resUser = await getUserId();
+            if (resUser.code == 200) {
+              const res = await postAsync("./APIs/adopt/approve.php", {
+                adoptId: adoptId,
+                userId: resUser.userId,
+              });
+              if (res.code == 200) {
+                const petId =
+                  $(".request-pet-modal").find(".request-pet-id")[0].value;
+                const adoptTransactions = await getAdoptTransactionByPet(petId);
+                await buildRequestDatatable(adoptTransactions);
+
+                const pets = await loadAllPets();
+                await buildDatatable(pets);
+
+                Swal.fire(
+                  "Success approved",
+                  "You has successful approve a request to next stage",
+                  "success"
+                ).then(() => {
+                  $(".request-detail-modal").modal("hide");
+                });
+              } else {
+                Swal.fire("Error!", res.message, "error");
+              }
+            } else {
+              Swal.fire("Error!", resUser.message, "error");
+            }
+          }
+        });
+      };
+      const rejectClick = async (ev) => {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "Please confirm that you want to reject this request.",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes",
+          cancelButtonText: "No",
+          reverseButtons: true,
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            const adoptId = ev.data.adoptId;
+            const resUser = await getUserId();
+            if (resUser.code == 200) {
+              const res = await postAsync("./APIs/adopt/reject.php", {
+                adoptId: adoptId,
+                userId: resUser.userId,
+              });
+              if (res.code == 200) {
+                const petId =
+                  $(".request-pet-modal").find(".request-pet-id")[0].value;
+                const adoptTransactions = await getAdoptTransactionByPet(petId);
+                await buildRequestDatatable(adoptTransactions);
+
+                Swal.fire(
+                  "Success rejected",
+                  "You has successful rejected a request",
+                  "success"
+                ).then(() => {
+                  $(".request-detail-modal").modal("hide");
+                });
+              } else {
+                Swal.fire("Error!", res.message, "error");
+              }
+            } else {
+              Swal.fire("Error!", resUser.message, "error");
+            }
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
