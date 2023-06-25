@@ -313,7 +313,23 @@
             data-bs-touch="true"
           >
             <div class="carousel-indicators"></div>
-            <div class="carousel-inner"></div>
+            <div class="carousel-inner">
+              <div class="bg-hero"></div>
+              <div class="carousel-item active">
+                <div class="row h-100 img-container m-0">
+                  <div class="d-none d-lg-block col-12 container ps-5">
+                    <div class="carousel-side-caption text-center">
+                      <h1 class="featurette-heading">Loading Event...</h1>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-lg-none container">
+                  <div class="carousel-caption text-start">
+                    <h1>Loading Event...</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
             <button
               class="carousel-control-prev"
               type="button"
@@ -358,7 +374,13 @@
               data-bs-touch="true"
             >
               <div class="carousel-indicators"></div>
-              <div class="carousel-inner"></div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="img-container" style="flex-direction: column">
+                    <h1 class="featurette-heading">Loading...</h1>
+                  </div>
+                </div>
+              </div>
               <button
                 class="carousel-control-prev"
                 type="button"
@@ -395,7 +417,13 @@
               data-bs-touch="true"
             >
               <div class="carousel-indicators"></div>
-              <div class="carousel-inner"></div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="img-container" style="flex-direction: column">
+                    <h1 class="featurette-heading">Loading...</h1>
+                  </div>
+                </div>
+              </div>
               <button
                 class="carousel-control-prev"
                 type="button"
@@ -440,7 +468,13 @@
           >
             <div class="carousel-indicators"></div>
 
-            <div class="carousel-inner"></div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="img-container" style="flex-direction: column">
+                  <h1 class="featurette-heading">Loading...</h1>
+                </div>
+              </div>
+            </div>
 
             <button
               class="carousel-control-prev"
@@ -476,7 +510,13 @@
         <div class="row my-4">
           <h1 class="col-12 feature-header fw-bold">ADOPTED</h1>
         </div>
-        <div class="reviews-container"></div>
+        <div class="reviews-container">
+          <div class="row featurette">
+            <div class="col-12 text-center">
+              <h1 class="featurette-heading">Loading...</h1>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -608,6 +648,7 @@
           });
 
           if (onGoingEvents.length > 0) {
+            carouselItems.empty();
             //has schedule event
             onGoingEvents.forEach((event, idx) => {
               //build indicator
@@ -744,6 +785,7 @@
           );
           if (edibleMenus.length > 0) {
             //have edible featured menu
+            edibleItems.empty();
             edibleMenus.forEach((edibleMenu, edibleIdx) => {
               //build indicators
               const edibleButtonElement = `
@@ -794,7 +836,7 @@
                                     <div>
                                   </div>
                                   `;
-            edibleItems.append(edibleItemsElements);
+            edibleItems.empty().append(edibleItemsElements);
             $("#menuEdibleCarousel .carousel-control-prev").remove();
             $("#menuEdibleCarousel .carousel-control-next").remove();
           }
@@ -805,6 +847,7 @@
           );
           if (unedibleMenus.length > 0) {
             //have unedible featured menu
+            unedibleItems.empty();
             unedibleMenus.forEach((unedibleMenus, unedibleIdx) => {
               //build indicators
               const unedibleButtonElement = `
@@ -861,7 +904,7 @@
                                     <div>
                                   </div>
                                   `;
-            unedibleItems.append(unedibleItemsElements);
+            unedibleItems.empty().append(unedibleItemsElements);
             $("#menuPetCarousel .carousel-control-prev").remove();
             $("#menuPetCarousel .carousel-control-next").remove();
           }
@@ -905,6 +948,7 @@
         if (!!res.galleryImages || res.code == 200) {
           if (res.galleryImages.length > 0) {
             //has gallery images
+            galleryItems.empty();
             res.galleryImages.forEach((image, idx) => {
               //build indicator
               const buttonElement = `
@@ -945,7 +989,7 @@
                                     </div>
                                   </div>
                                   `;
-            galleryItems.append(itemsElements);
+            galleryItems.empty().append(itemsElements);
             $("#galleryCarousel .carousel-control-prev").remove();
             $("#galleryCarousel .carousel-control-next").remove();
           }
@@ -960,7 +1004,7 @@
                                     </div>
                                   </div>
                                   `;
-          galleryItems.append(itemsElements);
+          galleryItems.empty().append(itemsElements);
           $("#galleryCarousel .carousel-control-prev").remove();
           $("#galleryCarousel .carousel-control-next").remove();
           Swal.fire("Error!", res.message, "error");
@@ -975,6 +1019,7 @@
         if (!!res.featuredReviews || res.code == 200) {
           if (res.featuredReviews.length > 0) {
             //has featured reviews
+            reviewsContainer.empty();
             res.featuredReviews.forEach((review, idx) => {
               const adopterName = review.Fullname.split(" ");
               if (idx % 2 != 0) {
@@ -1044,7 +1089,7 @@
                             </div>
                           </div>
                           `;
-            reviewsContainer.append(reviewBlock);
+            reviewsContainer.empty().append(reviewBlock);
           }
         } else {
           //some error occurred
@@ -1057,7 +1102,7 @@
                             </div>
                           </div>
                           `;
-          reviewsContainer.append(reviewBlock);
+          reviewsContainer.empty().append(reviewBlock);
           Swal.fire("Error!", res.message, "error");
         }
       };

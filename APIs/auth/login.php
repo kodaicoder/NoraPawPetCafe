@@ -1,7 +1,7 @@
 <?php
-include("../dbconn.php");
 ini_set('session.gc_maxlifetime', 2592000);
 session_start();
+include("../dbconn.php");
 try {
     // Retrieve the raw POST data
     $jsonData = file_get_contents('php://input');

@@ -21,7 +21,7 @@ try {
         // Set the directory where you want to save the file
         $rootPath = $_SERVER['DOCUMENT_ROOT'];
 
-        $uploadDirectory = '/norapetcafe/images/adopt/';
+        $uploadDirectory = '/images/adopt/';
 
         // Generate a unique filename for the uploaded file
         $newFileName = md5(uniqid()) . '_' . $fileName;
@@ -39,7 +39,7 @@ try {
                 $_POST['petDescription'],
                 $_POST['petBreed'],
                 $_POST['petAge'],
-                $uploadDirectory . $newFileName,
+                "." . $uploadDirectory . $newFileName,
                 $_POST['petSex'],
                 $_POST['petTypes'],
                 $currentTime,

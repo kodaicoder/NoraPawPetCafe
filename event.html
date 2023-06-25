@@ -274,12 +274,32 @@
         <div class="row events gap-4">
           <div class="ongoing-event" style="display: contents">
             <h1>Ongoing Events</h1>
+            <div class="col-12 row featurette">
+              <div class="text-center">
+                <h1
+                  class="featurette-heading"
+                  style="margin-bottom: 5rem; margin-top: 5rem"
+                >
+                  Loading...
+                </h1>
+              </div>
+            </div>
           </div>
 
           <hr class="featurette-divider" />
 
           <div class="past-event" style="display: contents">
             <h1>Past Events</h1>
+            <div class="col-12 row featurette">
+              <div class="text-center">
+                <h1
+                  class="featurette-heading"
+                  style="margin-bottom: 5rem; margin-top: 5rem"
+                >
+                  Loading...
+                </h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -410,15 +430,21 @@
           await buildPastEvent(pastEvents);
         } else {
           const eventCard = `
-          <div class="row featurette">
-            <div class="col-12 text-center">
+          <div class="col-12 row featurette">
+            <div class=" text-center">
               <h1 class="featurette-heading">More Events </h1>
                     <br/>
-              <h1 class="featurette-heading">coming soon...</h1>
+              <h1 class="featurette-heading"  
+              style="margin-bottom: 5rem; margin-top: 5rem">
+                coming soon...
+              </h1>
             </div>
           </div>
           `;
-          $(".ongoing-event, .past-event").append(eventCard);
+          $(".ongoing-event, .past-event")
+            .children(":not(:first-child)")
+            .empty()
+            .append(eventCard);
         }
       });
 
@@ -435,6 +461,7 @@
 
       const buildOngoingEvent = async (events) => {
         if (events.length > 0) {
+          $(".ongoing-event").children(":not(:first-child)").empty();
           events.forEach((event, idx) => {
             var startEventDate = new Date(event.EventDateStart);
             var endEventDate = new Date(event.EventDateEnd);
@@ -481,20 +508,27 @@
           });
         } else {
           const eventCard = `
-          <div class="row featurette">
-            <div class="col-12 text-center">
+          <div class="col-12 row featurette">
+            <div class=" text-center">
               <h1 class="featurette-heading">More Events </h1>
                     <br/>
-              <h1 class="featurette-heading">coming soon...</h1>
+              <h1 class="featurette-heading"  
+              style="margin-bottom: 5rem; margin-top: 5rem">
+                coming soon...
+              </h1>
             </div>
           </div>
           `;
-          $(".ongoing-event").append(eventCard);
+          $(".ongoing-event")
+            .children(":not(:first-child)")
+            .empty()
+            .append(eventCard);
         }
       };
 
       const buildPastEvent = async (events) => {
         if (events.length > 0) {
+          $(".past-event").children(":not(:first-child)").empty();
           events.forEach((event, idx) => {
             var startEventDate = new Date(event.EventDateStart);
             var endEventDate = new Date(event.EventDateEnd);
@@ -541,15 +575,21 @@
           });
         } else {
           const eventCard = `
-          <div class="row featurette">
-            <div class="col-12 text-center">
+          <div class="col-12 row featurette">
+            <div class=" text-center">
               <h1 class="featurette-heading">More Events </h1>
                     <br/>
-              <h1 class="featurette-heading">coming soon...</h1>
+              <h1 class="featurette-heading"  
+              style="margin-bottom: 5rem; margin-top: 5rem">
+                coming soon...
+              </h1>
             </div>
           </div>
           `;
-          $(".past-event").append(eventCard);
+          $(".past-event")
+            .children(":not(:first-child)")
+            .empty()
+            .append(eventCard);
         }
       };
     </script>

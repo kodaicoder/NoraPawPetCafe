@@ -1,11 +1,4 @@
 async function getAsync(url) {
-  $.ajaxSetup({
-    crossDomain: true,
-    xhrFields: {
-      withCredentials: true,
-    },
-  });
-
   let exportData = { message: "blank" };
   try {
     await $.get(url).done(async (data, status, xhr) => {
@@ -23,13 +16,6 @@ async function getAsync(url) {
 }
 
 async function postAsync(url, data) {
-  $.ajaxSetup({
-    crossDomain: true,
-    xhrFields: {
-      withCredentials: true,
-    },
-  });
-
   let exportData = { message: "blank" };
   try {
     await $.post(url, JSON.stringify(data)).done(async (data, status, xhr) => {
@@ -57,10 +43,6 @@ async function postFormDataAsync(url, formData) {
       dataType: "json",
       contentType: false,
       processData: false,
-      crossDomain: true,
-      xhrFields: {
-        withCredentials: true,
-      },
     }).done(async (data, status, xhr) => {
       exportData = data;
     });

@@ -274,11 +274,20 @@
 
     <main
       class="container bg-light-yellow rounded-5 my-4 my-md-5 my-lg-4 shadow-lg"
-      style="padding: 3rem"
+      style="padding: 3rem; min-height: 42rem"
     >
       <h1>Your pet adoption status</h1>
 
-      <div class="activeForm"></div>
+      <div class="activeForm">
+        <div class="row">
+          <div
+            class="col-12 notFound d-grid"
+            style="min-height: 35rem; place-content: center"
+          >
+            <h2>Loading your adopt data ...</h2>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="container-fluid">
@@ -402,7 +411,7 @@
                                     </div>
                                   </div>
                                   `;
-          $(".activeForm").append(noTransactionHTML);
+          $(".activeForm").empty().append(noTransactionHTML);
         }
       });
 
@@ -413,12 +422,25 @@
           const res = await getAsync(
             "./APIs/adopt/get_by_userId.php?id=" + resUser.userId
           );
-          if (!!res.transactions || res.code == 200) {
+          if (!!res.transactions && res.code == 200) {
             if (res.transactions.length > 0) {
               return res.transactions;
             }
           } else {
-            Swal.fire("Error!", res.message, "error");
+            const noTransactionHTML = `
+                                  <div class="row">
+                                    <div
+                                    class="col-12 notFound d-grid"
+                                    style="min-height: 35rem; place-content: center"
+                                    >
+                                      <h2>Not found any of your adoption request</h2>
+                                      <a class="btn btn-lg btn-my-primary my-3 mx-auto" href="./adopt.html">
+                                        Let adopt them
+                                      </a>
+                                    </div>
+                                  </div>
+                                  `;
+            $(".activeForm").empty().append(noTransactionHTML);
           }
         } else {
           Swal.fire("Error!", resUser.message, "error");
@@ -435,11 +457,12 @@
                                     </div>
                                   </div>
                                   `;
-          $(".activeForm").append(noTransactionHTML);
+          $(".activeForm").empty().append(noTransactionHTML);
         }
       };
 
       const buildStepper = async (transactions) => {
+        $(".activeForm").empty();
         transactions.forEach((transaction) => {
           const stepperCard = `
                               <div class="stepper card my-3">

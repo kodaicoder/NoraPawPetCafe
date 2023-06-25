@@ -318,8 +318,12 @@
               <div class="col-12 col-lg-2 text-center mb-3">
                 <h2>Coffee</h2>
               </div>
-              <div class="col-12 col-lg-10 scroll-container">
-                <div class="gridscroll coffee-grid"></div>
+              <div class="col-12 col-lg-10 scroll-container coffee-section">
+                <div class="row col-12 featurette">
+                  <div class="text-center my-5">
+                    <h1 class="featurette-heading">Loading...</h1>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -328,8 +332,14 @@
               <div class="col-12 col-lg-2 text-center mb-3 order-md-1">
                 <h2>Tea & Seasonal Drinks</h2>
               </div>
-              <div class="col-12 col-lg-10 scroll-container order-md-0">
-                <div class="gridscroll tea-grid"></div>
+              <div
+                class="col-12 col-lg-10 scroll-container order-md-0 tea-section"
+              >
+                <div class="row col-12 featurette">
+                  <div class="text-center my-5">
+                    <h1 class="featurette-heading">Loading...</h1>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -338,8 +348,12 @@
               <div class="col-12 col-lg-2 text-center mb-3">
                 <h2>Pain & Pastry</h2>
               </div>
-              <div class="col-12 col-lg-10 scroll-container">
-                <div class="gridscroll pastry-grid"></div>
+              <div class="col-12 col-lg-10 scroll-container pastry-section">
+                <div class="row col-12 featurette">
+                  <div class="text-center my-5">
+                    <h1 class="featurette-heading">Loading...</h1>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -348,8 +362,14 @@
               <div class="col-12 col-lg-2 text-center mb-3 order-md-1">
                 <h2>Sweets</h2>
               </div>
-              <div class="col-12 col-lg-10 scroll-container order-md-0">
-                <div class="gridscroll sweets-grid"></div>
+              <div
+                class="col-12 col-lg-10 scroll-container order-md-0 sweets-section"
+              >
+                <div class="row col-12 featurette">
+                  <div class="text-center my-5">
+                    <h1 class="featurette-heading">Loading...</h1>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -362,8 +382,17 @@
           >
             <!--? For Pet Row -->
             <div class="row align-items-center mb-4">
-              <div class="scroll-container">
-                <div class="gridscroll pet-grid"></div>
+              <div class="scroll-container pet-section">
+                <div class="row col-12 featurette">
+                  <div class="text-center">
+                    <h1
+                      class="featurette-heading"
+                      style="margin-top: 11rem; margin-bottom: 11rem"
+                    >
+                      Loading...
+                    </h1>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -519,7 +548,7 @@
           await buildSweets(sweetMenus);
           await buildPetMenus(petMenus);
         } else {
-          const eventCard = `
+          const menuCard = `
           <div class="row featurette">
             <div class="col-12 text-center">
               <h1 class="featurette-heading">More Menu </h1>
@@ -528,7 +557,7 @@
             </div>
           </div>
           `;
-          $("#edible-tab-pane,#unedible-tab-pane").empty().append(eventCard);
+          $("#edible-tab-pane,#unedible-tab-pane").empty().append(menuCard);
         }
       });
 
@@ -545,6 +574,7 @@
 
       const buildCoffee = async (coffeeMenus) => {
         if (coffeeMenus.length > 0) {
+          container = '<div class="gridscroll coffee-grid">';
           coffeeMenus.forEach((menu, idx) => {
             const menuCard = `
                           <div class="card" style="width: 250px">
@@ -563,8 +593,10 @@
                            </div>
                           </div>
                           `;
-            $(".coffee-grid").append(menuCard);
+            container += menuCard;
           });
+          container += "</div>";
+          $(".coffee-section").empty().append(container);
         } else {
           const menuCard = `  <div class="row featurette">
             <div class="col-12 text-center">
@@ -573,11 +605,12 @@
               <h1 class="featurette-heading">coming soon...</h1>
             </div>
           </div>`;
-          $(".coffee-grid").append(menuCard);
+          $(".coffee-section").empty().append(menuCard);
         }
       };
       const buildTea = async (teaMenus) => {
         if (teaMenus.length > 0) {
+          container = '<div class="gridscroll tea-grid">';
           teaMenus.forEach((menu, idx) => {
             const menuCard = `
                           <div class="card" style="width: 250px">
@@ -596,8 +629,10 @@
                            </div>
                           </div>
                           `;
-            $(".tea-grid").append(menuCard);
+            container += menuCard;
           });
+          container += "</div>";
+          $(".tea-section").empty().append(container);
         } else {
           const menuCard = `  <div class="row featurette">
             <div class="col-12 text-center">
@@ -606,11 +641,12 @@
               <h1 class="featurette-heading">coming soon...</h1>
             </div>
           </div>`;
-          $(".tea-grid").append(menuCard);
+          $(".tea-section").empty().append(menuCard);
         }
       };
       const buildPastry = async (pastryMenus) => {
         if (pastryMenus.length > 0) {
+          container = '<div class="gridscroll pastry-grid">';
           pastryMenus.forEach((menu, idx) => {
             const menuCard = `
                           <div class="card" style="width: 250px">
@@ -629,8 +665,11 @@
                            </div>
                           </div>
                           `;
-            $(".pastry-grid").append(menuCard);
+
+            container += menuCard;
           });
+          container += "</div>";
+          $(".pastry-section").empty().append(container);
         } else {
           const menuCard = `  <div class="row featurette">
             <div class="col-12 text-center">
@@ -639,11 +678,12 @@
               <h1 class="featurette-heading">coming soon...</h1>
             </div>
           </div>`;
-          $(".pastry-grid").append(menuCard);
+          $(".pastry-section").empty().append(menuCard);
         }
       };
       const buildSweets = async (sweetMenus) => {
         if (sweetMenus.length > 0) {
+          container = '<div class="gridscroll sweets-grid">';
           sweetMenus.forEach((menu, idx) => {
             const menuCard = `
                           <div class="card" style="width: 250px">
@@ -662,8 +702,10 @@
                            </div>
                           </div>
                           `;
-            $(".sweets-grid").append(menuCard);
+            container += menuCard;
           });
+          container += "</div>";
+          $(".sweets-section").empty().append(container);
         } else {
           const menuCard = `  <div class="row featurette">
             <div class="col-12 text-center">
@@ -672,11 +714,12 @@
               <h1 class="featurette-heading">coming soon...</h1>
             </div>
           </div>`;
-          $(".sweets-grid").append(menuCard);
+          $(".sweets-section").empty().append(menuCard);
         }
       };
       const buildPetMenus = async (petMenus) => {
         if (petMenus.length > 0) {
+          container = '<div class="gridscroll pet-grid">';
           petMenus.forEach((menu, idx) => {
             const menuCard = `
                           <div class="card" style="width: 250px">
@@ -695,8 +738,10 @@
                            </div>
                           </div>
                           `;
-            $(".pet-grid").append(menuCard);
+            container += menuCard;
           });
+          container += "</div>";
+          $(".pet-section").empty().append(container);
         } else {
           const menuCard = `  <div class="row featurette">
             <div class="col-12 text-center">
@@ -705,7 +750,7 @@
               <h1 class="featurette-heading">coming soon...</h1>
             </div>
           </div>`;
-          $(".pet-grid").append(menuCard);
+          $(".pet-section").empty().append(menuCard);
         }
       };
     </script>

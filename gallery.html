@@ -275,7 +275,18 @@
           <h1>GALLERY</h1>
         </div>
         <!-- images-grid -->
-        <div class="row images-container g-2"></div>
+        <div class="row images-container g-2">
+          <div class="col-12 row featurette">
+            <div class="text-center">
+              <h1
+                class="featurette-heading"
+                style="margin-bottom: 16rem; margin-top: 16rem"
+              >
+                Loading...
+              </h1>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer class="container-fluid">
@@ -400,6 +411,7 @@
       };
 
       const buildGallery = async (galleryImages) => {
+        $(".images-container").empty();
         if (galleryImages.length > 0) {
           galleryImages.forEach((image, idx) => {
             const imagesCol = `
@@ -411,22 +423,6 @@
                           `;
             $(".images-container").append(imagesCol);
           });
-
-          // const colNumber = Math.ceil(galleryImages.length / 4);
-          // let imagePos = 0;
-          // for (let i = 0; i < colNumber; i++) {
-          //   let imagesCol = `<div class="col-grid">`;
-          //   const imagePerCol = imagePos + 4;
-          //   for (imagePos; imagePos < imagePerCol; imagePos++) {
-          //     imagesCol += `
-          //                 <img src="${galleryImages[imagePos].GalleryImageSrc}"
-          //                       alt="gallery ${galleryImages[imagePos].GalleryId}"
-          //                 />
-          //                 `;
-          //   }
-          //   imagesCol += ` </div>`;
-          //   $(".images-grid").append(imagesCol);
-          // }
         } else {
           const galleryCard = `
           <div class="row featurette">

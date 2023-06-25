@@ -43,7 +43,7 @@ try {
 
             // Set the directory where you want to save the file
             $rootPath = $_SERVER['DOCUMENT_ROOT'];
-            $uploadDirectory = '/norapetcafe/images/gallery/';
+            $uploadDirectory = '/images/gallery/';
 
             // Generate a unique filename for the uploaded file
             $newFileName = md5(uniqid()) . '_' . $fileName;
@@ -56,7 +56,7 @@ try {
                 $sql = "INSERT INTO gallery VALUES (NULL,?,CAST(? AS UNSIGNED),1,?,?,?,?)";
 
                 $result = $conn->execute_query($sql, [
-                    $uploadDirectory . $newFileName,
+                    "." . $uploadDirectory . $newFileName,
                     $isFeaturedValue,
                     $_POST['userId'],
                     $currentTime,

@@ -1,7 +1,4 @@
 <?php
-// Allow requests from any origin
-header("Access-Control-Allow-Origin: *");
-
 include("../dbconn.php");
 try {
     $sql = "SELECT * FROM events WHERE IsActive = 1";

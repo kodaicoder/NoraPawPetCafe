@@ -22,7 +22,7 @@ try {
 
         // Set the directory where you want to save the file
         $rootPath = $_SERVER['DOCUMENT_ROOT'];
-        $uploadDirectory = '/norapetcafe/images/event/';
+        $uploadDirectory = '/images/event/';
 
         // Generate a unique filename for the uploaded file
         $newFileName = md5(uniqid()) . '_' . $fileName;
@@ -38,7 +38,7 @@ try {
             $result = $conn->execute_query($sql, [
                 $_POST['eventTitle'],
                 $_POST['eventDescription'],
-                $uploadDirectory . $newFileName,
+                "." . $uploadDirectory . $newFileName,
                 $_POST['eventStartDate'],
                 $_POST['eventEndDate'],
                 $_POST['eventStartTime'],

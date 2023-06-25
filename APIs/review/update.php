@@ -26,7 +26,7 @@ try {
                 $tempFilePath = $uploadedFile['tmp_name'];
 
                 $rootPath = $_SERVER['DOCUMENT_ROOT'];
-                $uploadDirectory = '/norapetcafe/images/adopter/';
+                $uploadDirectory = '/images/adopter/';
 
                 $newFileName = md5(uniqid()) . '_' . $fileName;
 
@@ -45,7 +45,7 @@ try {
                     $result = $conn->execute_query($sql, [
                         $adopterShortPhrase,
                         $adopterStory,
-                        $uploadDirectory . $newFileName,
+                        "." . $uploadDirectory . $newFileName,
                         $isFeatured,
                         $_POST['userId'],
                         $currentTime,

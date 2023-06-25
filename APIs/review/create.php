@@ -19,7 +19,7 @@ try {
         // Set the directory where you want to save the file
         $rootPath = $_SERVER['DOCUMENT_ROOT'];
 
-        $uploadDirectory = '/norapetcafe/images/adopter/';
+        $uploadDirectory = '/images/adopter/';
 
         // Generate a unique filename for the uploaded file
         $newFileName = md5(uniqid()) . '_' . $fileName;
@@ -36,7 +36,7 @@ try {
                 $_POST['transactionId'],
                 $_POST['shortPhase'],
                 $_POST['story'],
-                $uploadDirectory . $newFileName,
+                "." . $uploadDirectory . $newFileName,
                 $_POST['reviewIsFeatured'],
                 $_POST['userId'],
                 $currentTime,

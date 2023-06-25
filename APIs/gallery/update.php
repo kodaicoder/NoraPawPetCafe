@@ -28,7 +28,7 @@ try {
                 // Set the directory where you want to save the file
                 $rootPath = $_SERVER['DOCUMENT_ROOT'];
 
-                $uploadDirectory = '/norapetcafe/images/gallery/';
+                $uploadDirectory = '/images/gallery/';
 
                 // Generate a unique filename for the uploaded file
                 $newFileName = md5(uniqid()) . '_' . $fileName;
@@ -45,7 +45,7 @@ try {
                             WHERE GalleryId   = ?";
 
                     $result = $conn->execute_query($sql, [
-                        $uploadDirectory . $newFileName,
+                        "." . $uploadDirectory . $newFileName,
                         $isFeature,
                         $_POST['userId'],
                         $currentTime,

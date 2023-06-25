@@ -32,7 +32,7 @@ try {
                 $tempFilePath = $uploadedFile['tmp_name'];
 
                 $rootPath = $_SERVER['DOCUMENT_ROOT'];
-                $uploadDirectory = '/norapetcafe/images/event/';
+                $uploadDirectory = '/images/event/';
 
                 $newFileName = md5(uniqid()) . '_' . $fileName;
 
@@ -54,7 +54,7 @@ try {
                     $result = $conn->execute_query($sql, [
                         $eventTitle,
                         $eventDescription,
-                        $uploadDirectory . $newFileName,
+                        "." . $uploadDirectory . $newFileName,
                         $eventDateStart,
                         $eventDateEnd,
                         $eventTimeStart,

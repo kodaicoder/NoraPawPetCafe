@@ -65,7 +65,7 @@ try {
                 $menuCategorySubPath = '';
                 break;
         }
-        $uploadDirectory = '/norapetcafe/images/menu' . $menuTypeSubPath . $menuCategorySubPath . '/';
+        $uploadDirectory = '/images/menu' . $menuTypeSubPath . $menuCategorySubPath . '/';
 
         // Generate a unique filename for the uploaded file
         $newFileName = md5(uniqid()) . '_' . $fileName;
@@ -83,7 +83,7 @@ try {
                 $_POST['menuDescription'],
                 $_POST['menuPrice'],
                 $_POST['menuCategory'],
-                $uploadDirectory . $newFileName,
+                "." . $uploadDirectory . $newFileName,
                 $_POST['menuIsFeatured'],
                 $currentTime,
                 $_POST['userId'],
