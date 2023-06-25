@@ -8,7 +8,7 @@ try {
     if (isset($data->id) && isset($data->userId)) {
         $currentTime = date('Y-m-d H:i:s');
         // GET OLD DATA
-        $sqlFind = "SELECT * FROM `adopt_transactions` WHERE `AdoptTransactionId` = ?";
+        $sqlFind = "SELECT * FROM adopt_transactions WHERE AdoptTransactionId = ?";
         $resultFind = $conn->execute_query($sqlFind, [$data->id]);
         if ($resultFind) {
             while ($row = $resultFind->fetch_assoc()) {
@@ -29,7 +29,7 @@ try {
             }
 
             // SET ALL TRANSACTION ISACTIVE = 0
-            $sqlUpdate = "UPDATE `adopt_transactions`
+            $sqlUpdate = "UPDATE adopt_transactions
                           SET IsActive = 0
                           WHERE
                           UserId = ? AND

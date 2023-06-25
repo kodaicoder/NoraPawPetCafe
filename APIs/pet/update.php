@@ -6,7 +6,7 @@ try {
         $currentTime = date('Y-m-d H:i:s');
 
         // FIND old data
-        $sqlFind = "SELECT * FROM `pet` WHERE `PetId` = ?";
+        $sqlFind = "SELECT * FROM pet WHERE PetId = ?";
         $resultFind = $conn->execute_query($sqlFind, [$_POST['petId']]);
         if ($resultFind) {
             while ($row = $resultFind->fetch_assoc()) {
@@ -36,6 +36,7 @@ try {
 
                 // Set the directory where you want to save the file
                 $rootPath = $_SERVER['DOCUMENT_ROOT'];
+                ;
 
                 $uploadDirectory = '/images/adopt/';
 

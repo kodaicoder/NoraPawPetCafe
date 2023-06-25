@@ -888,7 +888,7 @@
         $(".menu-modal,.edit-menu-modal").on("hidden.bs.modal", (ev) => {
           $(ev.currentTarget).find("form").trigger("reset");
 
-          $(Ev.currentTarget)
+          $(ev.currentTarget)
             .find("input[name='menuIsFeatured']:last")
             .prop("checked", true);
         });

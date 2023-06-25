@@ -8,7 +8,7 @@ try {
     if (isset($data->imageId) && isset($data->userId)) {
         $currentTime = date('Y-m-d H:i:s');
 
-        $sqlUpdate = "Update `gallery`
+        $sqlUpdate = "Update gallery
             SET
             IsActive = 0,
             UpdateBy = ?,

@@ -41,6 +41,7 @@ try {
 
         // Set the directory where you want to save the file
         $rootPath = $_SERVER['DOCUMENT_ROOT'];
+        ;
 
         if ($menuTypeId == 1) {
             $menuTypeSubPath = '/edible';

@@ -8,7 +8,7 @@ try {
     if (isset($data->menuId) && isset($data->userId)) {
         $currentTime = date('Y-m-d H:i:s');
 
-        $sqlUpdate = "Update `menu`
+        $sqlUpdate = "Update menu
             SET
             IsActive = 0,
             UpdateBy = ?,

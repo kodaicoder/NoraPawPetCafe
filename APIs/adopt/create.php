@@ -20,7 +20,7 @@ try {
     ) {
         $currentTime = date('Y-m-d H:i:s');
 
-        $sqlFind = "SELECT * FROM `adopt_transactions` WHERE
+        $sqlFind = "SELECT * FROM adopt_transactions WHERE
         UserId = ? AND
         PetId = ? AND
         AdoptProcessId <5 AND

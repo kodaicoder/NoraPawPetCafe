@@ -13,7 +13,7 @@ try {
         $userId = $data->userId;
 
         // FIND old data
-        $sqlFind = "SELECT * FROM `adopt_transactions` WHERE `AdoptTransactionId` = ?";
+        $sqlFind = "SELECT * FROM adopt_transactions WHERE AdoptTransactionId = ?";
         $resultFind = $conn->execute_query($sqlFind, [$adoptId]);
 
         while ($row = $resultFind->fetch_assoc()) {

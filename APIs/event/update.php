@@ -6,17 +6,17 @@ try {
         $currentTime = date('Y-m-d H:i:s');
 
         //FIND old data
-        $sqlFind = "SELECT * FROM `events` WHERE `EventId` = ?";
+        $sqlFind = "SELECT * FROM events WHERE EventId = ? ";
         $resultFind = $conn->execute_query($sqlFind, [$_POST['eventId']]);
         if ($resultFind) {
             while ($row = $resultFind->fetch_assoc()) {
-                $eventTitle = $row[`EventTitle`];
-                $eventDescription = $row[`EventDescription`];
-                $eventImageSrc = $row[`EventImageSrc`];
-                $eventDateStart = $row[`EventDateStart`];
-                $eventDateEnd = $row[`EventDateEnd`];
-                $eventTimeStart = $row[`EventTimeStart`];
-                $eventTimeEnd = $row[`EventTimeEnd`];
+                $eventTitle = $row['EventTitle'];
+                $eventDescription = $row['EventDescription'];
+                $eventImageSrc = $row['EventImageSrc'];
+                $eventDateStart = $row['EventDateStart'];
+                $eventDateEnd = $row['EventDateEnd'];
+                $eventTimeStart = $row['EventTimeStart'];
+                $eventTimeEnd = $row['EventTimeEnd'];
             }
             //setup old data against new data
             (isset($_POST['eventTitle'])) ? $eventTitle = $_POST['eventTitle'] : "";
@@ -32,6 +32,7 @@ try {
                 $tempFilePath = $uploadedFile['tmp_name'];
 
                 $rootPath = $_SERVER['DOCUMENT_ROOT'];
+                ;
                 $uploadDirectory = '/images/event/';
 
                 $newFileName = md5(uniqid()) . '_' . $fileName;

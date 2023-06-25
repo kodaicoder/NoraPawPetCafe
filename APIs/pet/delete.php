@@ -8,7 +8,7 @@ try {
     if (isset($data->petId) && isset($data->userId)) {
         $currentTime = date('Y-m-d H:i:s');
 
-        $sqlUpdate = "Update `pet`
+        $sqlUpdate = "Update pet
             SET
             IsActive = 0,
             UpdateBy = ?,

@@ -26,6 +26,7 @@ try {
                 $tempFilePath = $uploadedFile['tmp_name'];
 
                 $rootPath = $_SERVER['DOCUMENT_ROOT'];
+                ;
                 $uploadDirectory = '/images/adopter/';
 
                 $newFileName = md5(uniqid()) . '_' . $fileName;

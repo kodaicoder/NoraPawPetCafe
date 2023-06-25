@@ -2,7 +2,7 @@
 
 include("../dbconn.php");
 try {
-    $sql = "SELECT A.*, B.Fullname, C.PetName FROM `adopt_transactions` AS A
+    $sql = "SELECT A.*, B.Fullname, C.PetName FROM adopt_transactions AS A
         LEFT JOIN users AS B
         ON A.UserId = B.UserId
         LEFT JOIN pet AS C

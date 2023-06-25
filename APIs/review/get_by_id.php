@@ -5,7 +5,7 @@ try {
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
-        $sql = "SELECT A.*, B.AdoptTransactionId ,C.PetName, D.Fullname FROM `adopter_review` AS A
+        $sql = "SELECT A.*, B.AdoptTransactionId ,C.PetName, D.Fullname FROM adopter_review AS A
         LEFT JOIN adopt_transactions AS B
         ON A.AdoptTransactionId =B.AdoptTransactionId
         LEFT JOIN pet AS C

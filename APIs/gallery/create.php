@@ -43,6 +43,7 @@ try {
 
             // Set the directory where you want to save the file
             $rootPath = $_SERVER['DOCUMENT_ROOT'];
+            ;
             $uploadDirectory = '/images/gallery/';
 
             // Generate a unique filename for the uploaded file

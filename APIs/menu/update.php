@@ -6,7 +6,7 @@ try {
         $currentTime = date('Y-m-d H:i:s');
 
         // FIND old data
-        $sqlFind = "SELECT * FROM `menu` WHERE `MenuId` = ?";
+        $sqlFind = "SELECT * FROM menu WHERE MenuId = ?";
         $resultFind = $conn->execute_query($sqlFind, [$_POST['menuId']]);
         if ($resultFind) {
             while ($row = $resultFind->fetch_assoc()) {
@@ -51,12 +51,11 @@ try {
 
                 // Access the file details like name, type, size, etc.
                 $fileName = $uploadedFile['name'];
-                // $fileType = $uploadedFile['type'];
-                // $fileSize = $uploadedFile['size'];
                 $tempFilePath = $uploadedFile['tmp_name'];
 
                 // Set the directory where you want to save the file
                 $rootPath = $_SERVER['DOCUMENT_ROOT'];
+                ;
 
                 if ($menuTypeId == 1) {
                     $menuTypeSubPath = '/edible';

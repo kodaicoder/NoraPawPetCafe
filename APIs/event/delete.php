@@ -8,7 +8,7 @@ try {
     if (isset($data->eventId) && isset($data->userId)) {
         $currentTime = date('Y-m-d H:i:s');
 
-        $sqlUpdate = "Update `events`
+        $sqlUpdate = "Update events
             SET
             IsActive = 0,
             UpdateBy =?,

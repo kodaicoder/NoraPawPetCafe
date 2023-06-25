@@ -8,7 +8,7 @@ try {
     if (isset($data->reviewId) && isset($data->userId)) {
         $currentTime = date('Y-m-d H:i:s');
 
-        $sqlUpdate = "Update `adopter_review`
+        $sqlUpdate = "Update adopter_review
             SET
             IsActive = 0,
             UpdateBy = ?,

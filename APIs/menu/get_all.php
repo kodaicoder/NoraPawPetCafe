@@ -2,7 +2,7 @@
 include("../dbconn.php");
 try {
     $sql = "SELECT A.*, B.MenuCategoryDescription, C.MenuTypeDescription
-    FROM `menu` as A
+    FROM menu as A
     LEFT JOIN menu_categories as B
     ON A.MenuCategoryId= B.MenuCategoryId
     LEFT JOIN menu_types as C

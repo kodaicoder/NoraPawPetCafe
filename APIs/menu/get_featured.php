@@ -1,7 +1,7 @@
 <?php
 include("../dbconn.php");
 try {
-    $sql = "SELECT * FROM menu WHERE MenuFeatured = 1";
+    $sql = "SELECT * FROM menu WHERE MenuFeatured = 1 AND IsActive = 1";
     $result = $conn->query($sql);
     if ($result->num_rows <= 0) {
         http_response_code(200);
